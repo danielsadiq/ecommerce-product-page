@@ -5,9 +5,9 @@ import Home from "./components/Main";
 function App() {
   return (
     <>
-      <LightBox />
       <Navbar />
       <Home/>
+      <LightBox />
     </>
   );
 }

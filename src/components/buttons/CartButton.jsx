@@ -1,12 +1,15 @@
+import { useState } from "react"
+
 function CartButton() {
+    const [quantity, setQuantity] = useState(0);
     return (
         <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex bg-[#edeef3] p-4 justify-between font-bold rounded-lg flex-1">
-                <button className="bg-transparent">
+                <button className="bg-transparent" onClick={() => setQuantity(c => c===0 ? 0 : c-1)}>
                     <img src="../images/icon-minus.svg"/>
                 </button>
-                0
-                <button className="bg-transparent">
+                {quantity}
+                <button className="bg-transparent" onClick={() => setQuantity(c => c+1)}>
                     <img src="../images/icon-plus.svg"/>
                 </button>
             </div>

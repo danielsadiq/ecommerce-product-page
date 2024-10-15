@@ -10,7 +10,7 @@ function PreviousNextButton() {
   //   </div>
   // );
   return (
-    <div className="absolute inset-[-20px] flex items-center justify-between">
+    <div className="absolute inset-[20px] flex items-center justify-between">
       <div className="cursor-pointer rounded-[50%] bg-white p-4 pr-5">
         <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
           <path
