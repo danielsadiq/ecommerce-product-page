@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import PreviousNextButton from "./buttons/PreviousNextButton"
+import PreviousNextButton from "./ui/PreviousNextButton"
 import { toggleLightBox } from "../uiSlice";
 
 function Image() {

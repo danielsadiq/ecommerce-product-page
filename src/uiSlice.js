@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   navOpen: false,
 	lightBox:false,
+  cartOpen: false,
 };
 
 const uiSlice = createSlice({
@@ -15,9 +16,12 @@ const uiSlice = createSlice({
 		toggleLightBox(state){
 			state.lightBox = !state.lightBox;
 		},
+    toggleCart(state){
+      state.cartOpen = !state.cartOpen;
+    }
   },
 });
 
-export const {toggleNav, toggleLightBox} = uiSlice.actions;
+export const {toggleNav, toggleLightBox, toggleCart} = uiSlice.actions;
 
 export default uiSlice.reducer;

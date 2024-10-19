@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import Image from "./Image";
-import CloseButton from "./buttons/CloseButton";
+import CloseButton from "./ui/CloseButton";
 
 function LightBox() {
   const lightBoxOn = useSelector(state => state.ui.lightBox);

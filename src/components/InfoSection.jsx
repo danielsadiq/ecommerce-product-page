@@ -1,4 +1,4 @@
-import CartButton from "./buttons/CartButton";
+import CartButton from "./ui/CartButton";
 
 function InfoSection() {
   return (
