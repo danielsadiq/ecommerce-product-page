@@ -1,3 +1,6 @@
+import { useDispatch } from "react-redux";
+import { nextImage } from "../../uiSlice";
+
 // eslint-disable-next-line react/prop-types
 function PreviousNextButton() {
   // return (
@@ -9,10 +12,11 @@ function PreviousNextButton() {
   //     <img src="../images/icon-next.svg" className="cursor-pointer rounded-[50%] bg-white p-2" />
   //   </div>
   // );
+  const dispatch = useDispatch();
   return (
     <div className="absolute inset-[20px] flex items-center justify-between">
-      <div className="cursor-pointer rounded-[50%] bg-white p-4 pr-5">
-        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+      <div className="cursor-pointer rounded-[50%] bg-white p-4 pr-5" onClick={() => dispatch(nextImage(-1))}>
+        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" >
           <path
             d="M11 1 3 9l8 8"
             stroke="#1D2026"
@@ -23,8 +27,12 @@ function PreviousNextButton() {
           />
         </svg>
       </div>
-      <div className="cursor-pointer rounded-[50%] bg-white p-4 pl-5">
-        <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+      <div className="cursor-pointer rounded-[50%] bg-white p-4 pl-5" onClick={() => dispatch(nextImage(1))}>
+        <svg
+          width="13"
+          height="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <path
             d="m2 1 8 8-8 8"
             stroke="#1D2026"

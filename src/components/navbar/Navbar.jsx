@@ -5,7 +5,10 @@ import Cart from "../Cart";
 
 function Navbar() {
   const dispatch = useDispatch();
+  const cartQuantity = useSelector(state => state.cart.quantity);
   const cartIsOpen = useSelector((state) => state.ui.cartOpen);
+  console.log(cartQuantity);
+  
   return (
     <>
       <ResponsiveNavbar />
@@ -35,7 +38,7 @@ function Navbar() {
             <div className="lg:relative">
               <button className="bg-transparent relative h-12" onClick={() => dispatch(toggleCart())}>
                 <img src="../images/icon-cart.svg" className="h-8 cursor-pointer" />
-                <span className="bg-[#ff7d1a] absolute top-0 left-1/2 rounded-full px-4 font-bold text-white">3</span>
+                {cartQuantity > 0 && <span className="bg-[#ff7d1a] absolute top-0 left-1/2 rounded-full px-4 font-bold text-white">{cartQuantity}</span>}
               </button>
               <div className="absolute top-[100%] right-0 lg:right-[-8rem]">
                 {cartIsOpen && <Cart/>}
