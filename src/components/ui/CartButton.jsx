@@ -1,7 +1,10 @@
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import PrimaryButton from "./PrimaryButton";
+import {addToCart} from "../../cartSlice";
 
 function CartButton() {
+  const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(0);
   return (
     <div className="flex flex-col gap-4 lg:flex-row">
@@ -20,7 +23,7 @@ function CartButton() {
           <img src="../images/icon-plus.svg" />
         </button>
       </div>
-      <PrimaryButton>
+      <PrimaryButton onClick={()=>dispatch(addToCart(quantity))} disabled={quantity < 1}>
         <img src="../images/icon-cart black.svg" /> Add to cart
       </PrimaryButton>
     </div>
